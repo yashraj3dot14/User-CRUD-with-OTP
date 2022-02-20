@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP Verification</title>
+</head>
+<body>
+{% for message in messages %}
+        <strong>{{ message }}</strong>
+{% endfor %}
+
+<form action="{% url 'user_reg_app:generate_otp' %}" method="post">
+    {% csrf_token %}
+    Mobile: <input type="number" name="mobile"><br>
+    <button type="submit">Generate</button>
+</form>
+</body>
+</html>

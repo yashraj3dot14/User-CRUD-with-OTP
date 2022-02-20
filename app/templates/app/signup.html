@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load crispy_forms_tags %}
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<body>
+<form action="{% url 'user_reg_app:signup' %}" method="post">
+    {% csrf_token %}
+    {{ form.username|as_crispy_field }}
+    {{ form.email|as_crispy_field }}
+    {{ form.password|as_crispy_field }}
+    {{ form.first_name|as_crispy_field }}
+    {{ form.last_name|as_crispy_field }}
+    {{ form.mobile|as_crispy_field }}
+    {{ form.sec_email|as_crispy_field }}
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP verification</title>
+</head>
+<body>
+<form action="{% url 'user_reg_app:otp_login' %}" method="post">
+    {% csrf_token %}
+    OTP: <input type="number" name="otp">
+    <button type="submit">Verify</button>
+</form>
+
+</body>
+</html>
